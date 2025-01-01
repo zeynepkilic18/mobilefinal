@@ -30,7 +30,8 @@ export default function TabNavigation() {
             <Ionicons name='stats-chart-outline' size={size} color={color}/>
         )}}
         />
-        <Tab.Screen name='Profile' component={Profile}
+        <Tab.Screen name='Profile' component={Profile} 
+        initialParams={{ points: 100 }}
         options={{tabBarIcon:({color,size})=>(
             <Ionicons name='person-outline' size={size} color={color}/>
         )}}

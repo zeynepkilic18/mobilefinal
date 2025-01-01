@@ -27,6 +27,7 @@ export default function App() {
      </SignedIn>
      <SignedOut>
           <Login/>
+          
      </SignedOut>
     </GestureHandlerRootView>
     </ClerkProvider>

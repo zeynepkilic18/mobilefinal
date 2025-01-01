@@ -1,12 +1,13 @@
 import { View, Text,Image, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { useUser } from '@clerk/clerk-expo'
 import Colors from '@/app/Shared/Colors';
 import { TextInput } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function Header() {
+export default function Header({points}:{points:number}) {
     const {isLoaded,isSignedIn,user}=useUser();
+    
   return isLoaded&&(
     <View> 
     <View style={[{justifyContent:'space-between'},styles.rowStyle]}>
@@ -21,7 +22,7 @@ export default function Header() {
       </View>
       <View style={styles.rowStyle}>
             <Image source={require('../../Assets/Images/coin.png')} style={{width:35,height:35}}/>
-            <Text style={styles.mainText}>3751</Text>
+            <Text style={styles.mainText}>{points}</Text>
         </View>
     </View>
         <View style={{backgroundColor:Colors.white, paddingLeft:20,

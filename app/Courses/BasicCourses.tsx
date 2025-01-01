@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View, Image } from 'react-native'
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Header from '../Components/HomeScreen/Header'
 import Slider from '../Components/HomeScreen/Slider'
@@ -7,7 +7,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { Ionicons } from '@expo/vector-icons'
 
 
-export default function BasicCourses() {
+export default function BasicCourses({increasePoints}: {increasePoints:(amount:number)=>void}) {
   
   return (
     <View >
@@ -43,6 +43,12 @@ export default function BasicCourses() {
                       </View>
                     </View>
 
+                    <View style={{marginTop:10}}>
+                      <TouchableOpacity style={styles.buttonStyle} onPress={() => increasePoints(10)}>
+                        <Text style={styles.buttonText} >Add to my List</Text>
+                      </TouchableOpacity>
+                    </View>
+
                   </View>
                 </View>
               </View>
@@ -73,6 +79,12 @@ export default function BasicCourses() {
                       </View>
                     </View>
 
+                    <View style={{marginTop:10}}>
+                      <TouchableOpacity style={styles.buttonStyle} onPress={() => increasePoints(10)}>
+                        <Text style={styles.buttonText} >Add to my List</Text>
+                      </TouchableOpacity>
+                    </View>
+
                   </View>
                 </View>
               </View>
@@ -101,6 +113,12 @@ export default function BasicCourses() {
                       <View style={styles.rowRight}>
                         <Ionicons name='logo-html5' size={20} color={Colors.orange}/>
                       </View>
+                    </View>
+
+                    <View style={{marginTop:10}}>
+                      <TouchableOpacity style={styles.buttonStyle} onPress={() => increasePoints(10)}>
+                        <Text style={styles.buttonText} >Add to my List</Text>
+                      </TouchableOpacity>
                     </View>
 
                   </View>
@@ -181,5 +199,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     color: Colors.primary,
-  }
+  },
+  buttonStyle: {
+    backgroundColor: Colors.primary,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });

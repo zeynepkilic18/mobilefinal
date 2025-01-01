@@ -5,6 +5,7 @@ import Colors from '@/app/Shared/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from 'expo-router';
 
+
 export default function Profile() {
     const { isLoaded, isSignedIn, user } = useUser();
     const navigation = useNavigation();
@@ -25,7 +26,7 @@ export default function Profile() {
                     <Text style={styles.mainText}>{user?.fullName}</Text>
                     <View style={styles.rowStyle}>
                       <Image source={require('../Assets/Images/coin.png')} style={{width:35,height:35}}/>
-                      <Text style={styles.mainText}>3751</Text>
+                      <Text style={styles.mainText}>230</Text>
                     </View>
                 </View>
             </View>
